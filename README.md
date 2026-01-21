@@ -6,6 +6,7 @@
 - [Data Sources](#data-sources)
 - [Tools](#tools)
 - [Data Preprocessing](#data-preprocessing)
+- [Data Analysis](#data-analysis)
 - [Results](#results)
 - [References](#references)
 
@@ -22,6 +23,21 @@ A raw "Sales.csv" dataset from Kaggle containing transactional records, product 
 
 ### Data Preprocessing 
 Executed automated data cleaning by auditing missing values, calculating null percentages and identifying duplicate records to ensure a high-fidelity dataset for analysis.
+
+### Data Analysis
+```Python
+import pandas as pd
+import matplotlib.pyplot as plt
+df= pd.read_csv('/content/Sales.csv')
+print(df)
+df.shape
+df.info()
+df.describe().round()
+df.isnull().sum()
+df.isnull().sum()/len(df)*100
+df[df.duplicated()].shape
+df[df.duplicated()]
+```
 
 ### Results 
 Successfully validated data quality by identifying the exact percentage of missing values and isolating duplicate entries, resulting in a structured, error-free dataset ready for business intelligence reporting.
